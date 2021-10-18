@@ -38,7 +38,7 @@ today.innerHTML = currentDate;
 let apiKey = "2837999d85cfe966fe1b8c08a26fa0de";
 
 //city search
-let location = document.querySelector("#location");
+let weather_location = document.querySelector("#location");
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
@@ -49,7 +49,7 @@ function search(event) {
   let openWeatherByCityApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
   axios.get(openWeatherByCityApiUrl).then(showTemp);
-  location.innerHTML = city.toUpperCase();
+  weather_location.innerHTML = city.toUpperCase();
   cityInput.value = "";
 }
 
